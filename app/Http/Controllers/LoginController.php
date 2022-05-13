@@ -17,13 +17,18 @@ class LoginController extends Controller
     {
         if (Auth::check()) {
             return redirect()->back();
+        }else{
+            return view('login-regist.login');
         }
-        return view('login-regist.login');
     }
 
     public function register()
     {
-        return view('login-regist.register');
+        if(Auth::check()){
+            return redirect()->back();
+        }else{
+            return view('login-regist.register');
+        }
     }
 
     public function postlogin(request $request)
