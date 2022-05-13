@@ -31,7 +31,7 @@ Route::get('/bmi-result', [BmiController::class, 'result'])->name('bmi-result');
 
 
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'revalidate'], function () {
     
     // Admin
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
