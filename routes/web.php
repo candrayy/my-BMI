@@ -26,6 +26,7 @@ Route::post('/post-register', [LoginController::class, 'postregister'])->name('p
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 // BMI
+Route::get('/', [BmiController::class, 'index']);
 Route::get('/bmi', [BmiController::class, 'index'])->name('bmi');
 Route::get('/bmi-result', [BmiController::class, 'result'])->name('bmi-result');
 
