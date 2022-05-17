@@ -31,7 +31,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="gambar" class="form-label">Pilih Gambar</label>
-                                <input type="file" id="gambar" name="gambar" class="form-control" style="height: 45px" required>
+                                <input type="file" id="gambar" name="gambar" class="form-control" style="height: 45px">
                             </div>
                             <img src="{{ asset('images/makanan/'.$makanan->gambar ) }}" width="95px" height="80px" alt="img">
                             <div class="form-group mt-3">
