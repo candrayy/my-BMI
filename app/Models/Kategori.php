@@ -17,6 +17,6 @@ class Kategori extends Model
 
     public function makanan()
     {
-        return $this->hasMany(Makanan::class, 'kategori_id');
+        return $this->hasMany(Makanan::class);
     }
 }
