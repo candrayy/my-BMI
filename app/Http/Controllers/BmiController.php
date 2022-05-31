@@ -23,24 +23,26 @@ class BmiController extends Controller
     {
         
         $hitung = ($request->filled('tinggi') && $request->filled('berat')) 
-        ? $request->berat / ($request->tinggi) * ($request->tinggi) : 10000;
+        ? $request->berat / ((($request->tinggi) * ($request->tinggi)) / 10000) : 0;
+
+        $hasil = round($hitung, 1);
         
-        if($hitung < 18.0)
+        if($hasil < 18.5)
         {
             $kategori = 'Kurus';
         }
-        elseif($hitung >= 18.0 && $hitung <= 28.9)
+        elseif($hasil >= 18.5 && $hasil <= 29.9)
         {
             $kategori = 'ideal';
         }
-        elseif($hitung > 28.9)
+        elseif($hasil > 29.9)
         {
             $kategori = 'Obesitas';
         }
         $bmi = DB::table('makanans')->join('kategoris', 'makanans.kategori_id', '=', 'kategoris.id')
                 ->where('kategoris.nama_kategori', $kategori)->get();
         // dd($bmi);
-        return view('result-bmi', compact('bmi', 'kategori', 'hitung'));
+        return view('result-bmi', compact('bmi', 'kategori', 'hasil'));
     }
 
     /**

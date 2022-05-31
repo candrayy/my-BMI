@@ -28,12 +28,12 @@
                                         <form class="user">
                                             <label for="tb">Nilai BMI Anda</label>
                                             <div class="form-group">
-                                                @if($hitung < 18.0)
-                                                <span class="badge badge-danger">{{ $hitung }} Kurus</span>
-                                                @elseif($hitung >= 18.0 && $hitung <= 28.9)
-                                                <span class="badge badge-success">{{ $hitung }} Ideal</span>
-                                                @elseif($hitung > 28.9)
-                                                <span class="badge badge-warning">{{ $hitung }} Obesitas</span>
+                                                @if($hasil < 18.5)
+                                                <span class="badge badge-danger">{{ $hasil }} Kurus</span>
+                                                @elseif($hasil >= 18.5 && $hasil <= 29.9)
+                                                <span class="badge badge-success">{{ $hasil }} Ideal</span>
+                                                @elseif($hasil > 29.9)
+                                                <span class="badge badge-warning">{{ $hasil }} Obesitas</span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
